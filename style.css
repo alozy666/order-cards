@@ -99,7 +99,7 @@ button { font: inherit; color: inherit; }
 .opt .letter { position: absolute; top: 8px; right: 8px; width: 2.1rem; height: 2.1rem; border-radius: 50%; display: grid; place-items: center;
   font-family: var(--head); font-weight: 800; font-size: 1.15rem; line-height: 1; color: #fff; background: var(--coral); box-shadow: 0 2px 0 var(--coral-d); }
 .opt img { width: 100%; height: clamp(104px, 27vw, 150px); object-fit: contain; }
-.opt .txt { font-family: var(--body); font-weight: 700; font-size: clamp(1.35rem, 4.6vw, 1.7rem); line-height: 1.6; }
+.opt .txt { font-family: var(--body); font-weight: 700; font-size: clamp(1.35rem, 4.6vw, 1.7rem); line-height: 1.6; padding: 0 2.5rem; }  /* keeps long answers clear of the letter badge (right) and the mark (left) */
 .opt .num { font-family: var(--body); font-weight: 700; font-size: clamp(2.6rem, 9vw, 3.4rem); line-height: 1.2; }
 .opt .mark { position: absolute; top: 8px; left: 8px; width: 2.1rem; height: 2.1rem; border-radius: 50%; display: none; place-items: center; }
 .opt .mark svg { width: 1.3rem; height: 1.3rem; fill: none; stroke: #fff; stroke-width: 3.4; stroke-linecap: round; stroke-linejoin: round; }
@@ -173,7 +173,7 @@ button { font: inherit; color: inherit; }
   .opt .letter { right: 6px; }
   .opt .mark { left: 6px; }
   .opt .mark svg { width: 1.05rem; height: 1.05rem; }
-  .opt .txt { font-size: clamp(1.15rem, 4.8vw, 1.35rem); }
+  .opt .txt { font-size: clamp(1.15rem, 4.8vw, 1.35rem); padding: 0 1.95rem; }
   .opt .num { font-size: clamp(2rem, 9vw, 2.5rem); }
   .opt .dg { font-size: 1.1rem; }
   .opt .tag { font-size: 0.75rem; bottom: -12px; }
