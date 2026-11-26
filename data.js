@@ -32,7 +32,7 @@ window.QUIZ = {
   {
    "n": 2,
    "unit": "ع5",
-   "stem": "أَيُّ صَحْنٍ عَدَدُ تُفَّاحِهِ ٠؟",
+   "stem": "أَيُّ صَحْنٍ عَدَدُ تُفَّاحِهِ صِفْرٌ؟",
    "img": null,
    "frame": false,
    "options": [
@@ -261,16 +261,20 @@ window.QUIZ = {
    "frame": false,
    "options": [
     {
-     "num": "٠"
+     "text": "صِفْرٌ",
+     "digit": "٠"
     },
     {
-     "num": "١"
+     "text": "وَاحِدٌ",
+     "digit": "١"
     },
     {
-     "num": "٥"
+     "text": "خَمْسَةٌ",
+     "digit": "٥"
     },
     {
-     "num": "١٠"
+     "text": "عَشَرَةٌ",
+     "digit": "١٠"
     }
    ],
    "correct": 0,

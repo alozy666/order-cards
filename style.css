@@ -21,7 +21,7 @@ body { margin: 0; min-height: 100vh; color: var(--cream); background: var(--nigh
   linear-gradient(180deg, rgba(7,35,42,0.55), rgba(7,35,42,0.25) 50%, rgba(7,35,42,0.7)), url("img/ui/bg.webp") center bottom / cover no-repeat, var(--night); }
 main { position: relative; z-index: 1; max-width: 760px; margin: 0 auto; padding: 16px 16px 48px; }
 [hidden] { display: none !important; }
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 h1, h2, p { margin: 0; }
 button { font: inherit; color: inherit; }
 :focus-visible { outline: 4px solid var(--gold); outline-offset: 3px; border-radius: 12px; }
@@ -135,6 +135,67 @@ button { font: inherit; color: inherit; }
 #result .btn.ghost { margin-top: 6px; }
 
 .noscript { position: relative; z-index: 2; text-align: center; padding: 40px 16px; font-size: 1.3rem; }
+
+.opt.word { flex-direction: column; gap: 0; }
+.opt .dg { font-family: var(--body); font-weight: 700; font-size: 1.3rem; line-height: 1.3; color: var(--coral-d); }
+
+/* ---------- phones: compact cards, feedback as a bottom panel ---------- */
+@media (max-width: 699px) {
+  main { padding: 12px 12px 32px; }
+  .hero, .path-card { margin: -12px -12px 0; }
+  .hero img { aspect-ratio: 4 / 3; }
+  .hero .pill { bottom: calc(22px + clamp(2.3rem, 10vw, 3rem) * 1.3); right: 16px; }
+  .hero h1 { font-size: clamp(2.3rem, 10vw, 3rem); right: 14px; left: 14px; bottom: 14px; }
+  .talk { margin: 12px 0 4px; }
+  .buddy { width: 92px; height: 92px; }
+  .bubble { font-size: 1.12rem; padding: 10px 14px; margin-bottom: 18px; }
+  .ticket { padding: 14px 14px 10px; margin: 10px 0 18px; }
+  .ticket h2 { font-size: 1.15rem; }
+  .ticket li { font-size: 1.05rem; padding: 4px 0; gap: 10px; }
+  .ticket .n { width: 1.7rem; height: 1.7rem; font-size: 0.95rem; }
+  .btn { min-height: 56px; font-size: 1.45rem; }
+
+  .bar { padding: 0 0 10px; gap: 6px; }
+  .count { font-size: 1rem; }
+  .dots { gap: 3px; }
+  .dots li { height: 7px; }
+  .card { padding: 14px 12px 14px; border-radius: 22px; }
+  .stem-row { align-items: center; gap: 8px; }
+  .stem { font-size: clamp(1.25rem, 5.6vw, 1.5rem); line-height: 1.7; }
+  .listen { width: 44px; height: 44px; padding: 0; justify-content: center; }
+  .listen span { display: none; }
+  .pic { margin: 8px auto 2px; padding: 8px; }
+  .pic img { height: clamp(140px, 40vw, 190px); }
+  .options { gap: 9px; margin-top: 10px; }
+  .opt { min-height: 0; padding: 24px 6px 8px; border-radius: 14px; }
+  .opt img { height: clamp(84px, 25vw, 122px); }
+  .opt .letter, .opt .mark { width: 1.7rem; height: 1.7rem; font-size: 0.95rem; top: 6px; }
+  .opt .letter { right: 6px; }
+  .opt .mark { left: 6px; }
+  .opt .mark svg { width: 1.05rem; height: 1.05rem; }
+  .opt .txt { font-size: clamp(1.15rem, 4.8vw, 1.35rem); }
+  .opt .num { font-size: clamp(2rem, 9vw, 2.5rem); }
+  .opt .dg { font-size: 1.1rem; }
+  .opt .tag { font-size: 0.75rem; bottom: -12px; }
+
+  body.has-fb main { padding-bottom: 210px; }
+  .feedback { position: fixed; z-index: 5; left: 0; right: 0; bottom: 0; margin: 0; flex-wrap: wrap; align-items: center; gap: 8px 10px;
+    padding: 12px 14px calc(12px + env(safe-area-inset-bottom)); background: var(--night-2); border-top: 3px solid var(--gold);
+    border-radius: 22px 22px 0 0; box-shadow: 0 -12px 30px rgba(0,0,0,0.5); animation: sheet 0.28s ease both; }
+  @keyframes sheet { from { transform: translateY(100%); } to { transform: none; } }
+  .feedback .buddy { width: 64px; height: 64px; }
+  .feedback .fb-body { display: contents; }
+  .feedback .bubble { flex: 1; width: auto; font-size: 1.08rem; line-height: 1.8; padding: 8px 12px; transform: none; border-radius: 16px; }
+  .feedback .bubble::after { display: none; }
+  .feedback .btn.small { flex: 1 0 100%; width: 100%; min-height: 52px; font-size: 1.3rem; margin: 2px 0 0; }
+
+  .seal { width: 170px; height: 170px; margin: 4px auto 18px; }
+  .seal-num { font-size: 3.6rem; }
+  .seal-label, .seal-of { font-size: 1rem; }
+  #result .path-card { margin: 0; }
+  #result .path-card img { aspect-ratio: 16 / 10; }
+  .goto { font-size: 1.12rem; }
+}
 
 @media (min-width: 700px) {
   main { padding-top: 28px; }

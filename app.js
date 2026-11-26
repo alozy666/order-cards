@@ -73,14 +73,16 @@
       var inner = '<span class="letter">' + LET[k] + '</span><span class="mark" aria-hidden="true"></span>';
       if (o.img) inner += '<img src="' + o.img + '" alt="">';
       else if (o.num) inner += '<span class="num">' + o.num + "</span>";
-      else inner += '<span class="txt"></span>';
+      else inner += '<span class="txt"></span>' + (o.digit ? '<span class="dg">' + o.digit + "</span>" : "");
       b.innerHTML = inner;
       if (o.text) b.querySelector(".txt").textContent = o.text;
       b.setAttribute("aria-label", LET[k] + (o.text ? "، " + o.text : o.num ? "، " + o.num : ""));
+      if (o.digit) b.classList.add("word");
       b.addEventListener("click", function () { choose(k); });
       box.appendChild(b);
     });
     $("feedback").hidden = true;
+    document.body.classList.remove("has-fb");
     var card = $("card"); card.style.animation = "none"; void card.offsetWidth; card.style.animation = "";
     $("stem").focus({ preventScroll: true });
     preload(state.i + 1);
@@ -112,7 +114,9 @@
     text("fb-text", ok ? q.right : q.wrong[String(k)]);
     text("t-next", state.i === Q.questions.length - 1 ? ui.finish : ui.next);
     fb.hidden = false;
-    fb.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "end" });
+    document.body.classList.add("has-fb");
+    // on a phone the feedback is a panel fixed to the bottom of the screen: no scrolling needed
+    if (getComputedStyle(fb).position !== "fixed") fb.scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "end" });
     $("next").focus({ preventScroll: true });
   }
 
@@ -153,6 +157,7 @@
     } else {
       text("r-practice-title", ui.allright);
     }
+    document.body.classList.remove("has-fb");
     show("result");
   }
   $("again").addEventListener("click", function () { show("start"); });
