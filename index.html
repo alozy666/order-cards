@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بطاقات الطلبيات</title>
+<meta name="description" content="اختبار تشخيصي قبل درس وصف المجسمات، الصف الثاني">
+<meta name="theme-color" content="#07232A">
+<link rel="preload" href="fonts/naskh-bold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/playpen-extrabold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sky" aria-hidden="true"></div>
+<main id="app">
+
+  <!-- start -->
+  <section id="start" class="screen" aria-labelledby="t-title">
+    <div class="hero">
+      <img src="img/ui/hero-cards.webp" alt="" width="1200" height="675">
+      <div class="shade"></div>
+      <p class="pill" id="t-kicker"></p>
+      <h1 class="gold" id="t-title"></h1>
+    </div>
+    <div class="talk">
+      <img class="buddy" src="img/ui/ulba-wave.webp" alt="عُلبة يلوّح بيده" width="420" height="420">
+      <p class="bubble" id="t-hello"></p>
+    </div>
+    <div class="ticket">
+      <h2 id="t-steps"></h2>
+      <ol id="steps"></ol>
+    </div>
+    <button class="btn" id="go" type="button"><span id="t-start"></span> <span class="arrow" aria-hidden="true">←</span></button>
+  </section>
+
+  <!-- one question at a time -->
+  <section id="quiz" class="screen" hidden aria-live="off">
+    <header class="bar">
+      <p class="count" id="count"></p>
+      <ol class="dots" id="dots" aria-hidden="true"></ol>
+    </header>
+    <article class="card" id="card">
+      <div class="stem-row">
+        <h2 class="stem" id="stem" tabindex="-1"></h2>
+        <button class="listen" id="listen" type="button" hidden>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" fill="none" stroke-width="2" stroke-linecap="round"/></svg>
+          <span id="t-listen"></span>
+        </button>
+      </div>
+      <figure class="pic" id="pic" hidden><img id="pic-img" alt=""></figure>
+      <div class="options" id="options" role="group" aria-labelledby="stem"></div>
+    </article>
+    <div class="feedback" id="feedback" hidden aria-live="polite">
+      <img class="buddy" id="fb-buddy" src="img/ui/ulba-joy.webp" alt="" width="420" height="420">
+      <div class="fb-body">
+        <p class="bubble" id="fb-text"></p>
+        <button class="btn small" id="next" type="button"><span id="t-next"></span> <span class="arrow" aria-hidden="true">←</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- result -->
+  <section id="result" class="screen" hidden aria-labelledby="r-score-label">
+    <div class="seal">
+      <p class="seal-label" id="r-score-label"></p>
+      <p class="seal-num" id="r-score"></p>
+      <p class="seal-of" id="r-of"></p>
+    </div>
+    <div class="path-card">
+      <img id="r-path-img" src="img/ui/path2.webp" alt="" width="900" height="506">
+      <div class="shade"></div>
+      <p class="pill" id="r-path-label"></p>
+      <h2 class="gold" id="r-path-name"></h2>
+    </div>
+    <div class="talk">
+      <img class="buddy" src="img/ui/ulba-point.webp" alt="عُلبة يشير إلى المسار" width="420" height="420">
+      <p class="bubble" id="r-say"></p>
+    </div>
+    <p class="goto" id="r-goto"></p>
+    <div class="ticket" id="r-practice-box">
+      <h2 id="r-practice-title"></h2>
+      <ul id="r-practice"></ul>
+    </div>
+    <button class="btn ghost" id="again" type="button"><span id="t-again"></span></button>
+  </section>
+
+</main>
+<noscript><p class="noscript">يحتاج الاختبار إلى تشغيل JavaScript في المتصفح.</p></noscript>
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
